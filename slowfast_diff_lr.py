@@ -31,12 +31,12 @@ sampling_rate = 1
 frames_per_second = 32/6
 clip_duration = (num_frames * sampling_rate) / frames_per_second
 num_classes = 3
-checkpoint_path = '/kaggle/working/SLOWFAST_8x8_R50.pyth'
+#checkpoint_path = '/kaggle/working/SLOWFAST_8x8_R50.pyth'
 
-data_root = "/kaggle/input/prevention/all"
+data_root = "/home/k/kai/data/all"
 batch_size = 6
 epochs = 50
-save_root = '/kaggle/working/CheckPoints/Batch_2_sgd_lr001'
+save_root = '//home/k/kai/CheckPoints/Batch_6_diff_lr'
 
 # for reproducibility
 random.seed(1)
