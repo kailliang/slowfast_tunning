@@ -21,11 +21,11 @@ from pytorchvideo.transforms import ApplyTransformToKey, UniformTemporalSubsampl
 from torch import nn
 from torchvision.transforms import Compose, Lambda, RandomCrop, RandomHorizontalFlip, CenterCrop
 
-side_size = 256
+side_size = 336
 max_size = 256
 mean = [0.45, 0.45, 0.45]
 std = [0.225, 0.225, 0.225]
-crop_size = 100
+crop_size = 336
 num_frames = 32
 sampling_rate = 1
 frames_per_second = 32/6
@@ -170,7 +170,7 @@ optimizer = SGD([{'params':slow_fast.blocks[0:6].parameters(),'lr':0.0001},
 
 
 
-print(optimizer)
+#print(optimizer)
 
 ##---------------------------------------------------------------------------------------------------------
 # training loop
