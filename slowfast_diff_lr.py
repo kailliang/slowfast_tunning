@@ -22,7 +22,7 @@ from torch import nn
 from torchvision.transforms import Compose, Lambda, RandomCrop, RandomHorizontalFlip, CenterCrop
 
 side_size = 336
-max_size = 256
+max_size = 336
 mean = [0.45, 0.45, 0.45]
 std = [0.225, 0.225, 0.225]
 crop_size = 336
