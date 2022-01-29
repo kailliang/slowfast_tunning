@@ -36,7 +36,7 @@ num_classes = 3
 data_root = "/home/k/kai/data/all"
 batch_size = 10
 epochs = 50
-save_root = '//home/k/kai/CheckPoints/Batch_6_diff_lr'
+save_root = '//home/k/kai/CheckPoints/Batch_10_005'
 
 # for reproducibility
 random.seed(1)
@@ -156,17 +156,17 @@ slow_fast.blocks[6].proj = torch.nn.Linear(in_features=2304, out_features=3, bia
 
 loss_criterion = CrossEntropyLoss()
 # optimizer = Adam(slow_fast.parameters(), lr=1e-1)
-#optimizer = SGD(slow_fast.parameters(), lr=0.001, momentum=0.9,weight_decay=0.0001)
+optimizer = SGD(slow_fast.parameters(), lr=0.005, momentum=0.9,weight_decay=0.0001)
 
 
 # optimizer = SGD([{'params':slow_fast.parameters(),'lr':args.learning_rate},{'params':model.head.parameters(),'lr':args.learning_rate}],
 #                 lr=args.learning_rate,momentum=0.9,weight_decay=args.weight_decay)
 
-optimizer = SGD([{'params':slow_fast.blocks[0:6].parameters(),'lr':0.0001},
-                 {'params':slow_fast.blocks[6].dropout.parameters(),'lr':0.0001},
-                 {'params':slow_fast.blocks[6].proj.parameters(),'lr':0.001},
-                 {'params':slow_fast.blocks[6].output_pool.parameters(),'lr':0.0001}], 
-                lr=0.0001,momentum=0.9,weight_decay=0.0001)
+# optimizer = SGD([{'params':slow_fast.blocks[0:6].parameters(),'lr':0.0001},
+#                  {'params':slow_fast.blocks[6].dropout.parameters(),'lr':0.0001},
+#                  {'params':slow_fast.blocks[6].proj.parameters(),'lr':0.001},
+#                  {'params':slow_fast.blocks[6].output_pool.parameters(),'lr':0.0001}], 
+#                 lr=0.0001,momentum=0.9,weight_decay=0.0001)
 
 
 
