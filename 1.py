@@ -34,9 +34,9 @@ num_classes = 3
 #checkpoint_path = '/kaggle/working/SLOWFAST_8x8_R50.pyth'
 
 data_root = "/home/k/kai/data/all"
-batch_size = 10
+batch_size = 6
 epochs = 50
-save_root = '//home/k/kai/CheckPoints/Batch_6_diff_lr'
+save_root = '//home/k/kai/CheckPoints/Batch_6_001_0001'
 
 # for reproducibility
 random.seed(1)
@@ -162,11 +162,11 @@ loss_criterion = CrossEntropyLoss()
 # optimizer = SGD([{'params':slow_fast.parameters(),'lr':args.learning_rate},{'params':model.head.parameters(),'lr':args.learning_rate}],
 #                 lr=args.learning_rate,momentum=0.9,weight_decay=args.weight_decay)
 
-optimizer = SGD([{'params':slow_fast.blocks[0:6].parameters(),'lr':0.0001},
-                 {'params':slow_fast.blocks[6].dropout.parameters(),'lr':0.0001},
-                 {'params':slow_fast.blocks[6].proj.parameters(),'lr':0.001},
-                 {'params':slow_fast.blocks[6].output_pool.parameters(),'lr':0.0001}], 
-                lr=0.0001,momentum=0.9,weight_decay=0.0001)
+optimizer = SGD([{'params':slow_fast.blocks[0:6].parameters(),'lr':0.001},
+                 {'params':slow_fast.blocks[6].dropout.parameters(),'lr':0.001},
+                 {'params':slow_fast.blocks[6].proj.parameters(),'lr':0.0001},
+                 {'params':slow_fast.blocks[6].output_pool.parameters(),'lr':0.001}], 
+                lr=0.001,momentum=0.9,weight_decay=0.0001)
 
 
 
