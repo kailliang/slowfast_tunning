@@ -34,9 +34,9 @@ num_classes = 3
 #checkpoint_path = '/kaggle/working/SLOWFAST_8x8_R50.pyth'
 
 data_root = "/home/k/kai/data/all"
-batch_size = 6
+batch_size = 10
 epochs = 50
-save_root = '//home/k/kai/CheckPoints/Batch_6_002'
+save_root = '//home/k/kai/CheckPoints/Batch_10_002'
 
 # for reproducibility
 random.seed(1)
