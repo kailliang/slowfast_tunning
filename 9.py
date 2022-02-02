@@ -36,7 +36,7 @@ num_classes = 3
 data_root = "/home/k/kai/data/all"
 batch_size = 6
 epochs = 50
-save_root = '/home/k/kai/CheckPoints/Res_392_Batch_6_08'
+save_root = '/home/k/kai/CheckPoints/Res_392_Batch_6_02'
 
 # for reproducibility
 random.seed(1)
@@ -156,7 +156,7 @@ slow_fast.blocks[6].proj = torch.nn.Linear(in_features=2304, out_features=3, bia
 
 loss_criterion = CrossEntropyLoss()
 # optimizer = Adam(slow_fast.parameters(), lr=1e-1)
-optimizer = SGD(slow_fast.parameters(), lr=0.08, momentum=0.9,weight_decay=0.001)
+optimizer = SGD(slow_fast.parameters(), lr=0.02, momentum=0.9,weight_decay=0.001)
 
 
 # optimizer = SGD([{'params':slow_fast.parameters(),'lr':args.learning_rate},{'params':model.head.parameters(),'lr':args.learning_rate}],
